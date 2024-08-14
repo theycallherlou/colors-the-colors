@@ -49,18 +49,15 @@ export default {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'url-loader'
       },
-     {
-       test: /\.(woff|woff2|eot|ttf|otf)$/i,
-       type: 'asset/resource'
-     },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource'
+      },
     ]
   },
   plugins: [
     new ESLintWebpackPlugin({ 
-      extensions: ['js', 'jsx'],
-      configType: 'flat',
-      eslintPath: 'eslint/use-at-your-own-risk',
-
+      extensions: ['js', 'jsx']
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html'
