@@ -6,7 +6,10 @@
   "private": true,
   "main": "src/index.jsx",
   "scripts": {
-    "dev": "webpack serve"
+    "clean": "rm -rf dist",
+    "build": "webpack",
+    "dev": "webpack serve",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
