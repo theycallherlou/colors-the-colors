@@ -1,14 +1,16 @@
 {
   "name": "colors-the-colors",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "type": "module",
+  "private": true,
+  "main": "src/index.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack serve"
   },
   "keywords": [],
-  "author": "Adam Robson <adamrayrobson@gmail.com>",
-  "license": "ISC",
-  "description": "",
+  "author": "",
+  "license": "",
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
