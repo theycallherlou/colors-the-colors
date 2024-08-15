@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    // Latest ECMAScript features
+    "target": "ESNext",
+    // Use modern libraries, including DOM and ESNext
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    // Allows JavaScript files to be compiled
+    "allowJs": true,             
+    // Skip type checking of declaration files (.d.ts)                
+    "skipLibCheck": true,   
+    // Enables interoperability between CommonJS and ES Modules     
+    "esModuleInterop": true,
+    // Allow default imports from modules with no default export
+    "allowSyntheticDefaultImports": true,
+    // Enable all strict type-checking options
+    "strict": true,
+    // Disallow inconsistently-cased references to the same file
+    "forceConsistentCasingInFileNames": true,
+     // Use ECMAScript modules
+    "module": "ESNext",
+    // Resolve modules using Node.js module resolution strategy
+    "moduleResolution": "Node",                  
+    // Include modules imported with .json extensions
+    "resolveJsonModule": true,                  
+    // Ensure each file can be safely transpiled without relying on other files
+    "isolatedModules": true,                     
+    // Use JSX transform from React 17 onwards
+    "jsx": "react-jsx", 
+    // Do not emit compiled files
+    "noEmit": true,     
+    // Enable incremental compilation
+    "incremental": true,
+    // Specify which type definitions to include (e.g., Node.js, Jest)
+    "types": ["node", "jest"],                      
+    // Example path alias for easier imports
+    "paths": {
+      "@components/*": ["src/components/*"],     
+      "@utils/*": ["src/utils/*"]
+    },
+    // Base directory for resolving non-relative module names
+    "baseUrl": "./",                             
+    // Output directory for compiled files (if `noEmit` is disabled)
+    "outDir": "./dist",                          
+    // Root directory of your source files
+    "rootDir": "./src"                           
+  },
+  // Include all TypeScript and JavaScript files in the src directory
+  "include": ["src"],                            
+  // Exclude node_modules and output directories
+  "exclude": ["node_modules", "dist", "build"]   
+}
