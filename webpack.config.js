@@ -71,7 +71,10 @@ export default {
   },
   plugins: [
     new ESLintWebpackPlugin({ 
-      extensions: ['js', 'jsx', 'ts', 'tsx']
+      extensions: ['js', 'jsx', 'ts', 'tsx'],
+      configType: 'flat',
+      context: path.join(__dirname, 'src'),
+      exclude: 'node_modules'
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html' // Correct path to your HTML template
