@@ -8,10 +8,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default {
   mode: 'development',
-  entry: './src/index.jsx',
+  entry: './src/index.tsx',
   output: {
-    filename: '[name]-[contenthash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
     clean: true,
     publicPath: '/'
   },
@@ -26,7 +26,21 @@ export default {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(ts|tsx)$/, // Matches .ts and .tsx files
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react',
+              '@babel/preset-typescript'
+            ]
+          }
+        }
+      },
+      {
+        test: /\.jsx?$/, // Matches .js and .jsx files
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -39,35 +53,35 @@ export default {
         }
       },
       {
-        test: /\.css$/i,
+        test: /\.css$/i, // Matches .css files
         use: [
           'style-loader', 
           'css-loader'
         ]
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'url-loader'
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif)$/i, // Matches image files
         type: 'asset/resource'
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i, // Matches font files
+        type: 'asset/resource'
+      }
     ]
   },
   plugins: [
     new ESLintWebpackPlugin({ 
-      extensions: ['js', 'jsx']
+      extensions: ['js', 'jsx', 'ts', 'tsx']
     }),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html' // Correct path to your HTML template
     }),
     new webpack.ProvidePlugin({
-      React: 'react'
+      React: 'react' // Automatically loads React where it's used
     })
   ],
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   optimization: {
     moduleIds: 'deterministic',

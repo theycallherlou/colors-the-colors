@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import NotFound from './components/NotFound';
@@ -6,7 +5,7 @@ import Color from './components/Color';
 
 export default function App() {
   return (
-    <div>
+    <div className="container">
       <Routes>
         <Route element={ <Layout />}>
           <Route

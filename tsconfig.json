@@ -42,7 +42,7 @@
     // Output directory for compiled files (if `noEmit` is disabled)
     "outDir": "./dist",                          
     // Root directory of your source files
-    "rootDir": "./src"                           
+    "rootDir": "./src"                          
   },
   // Include all TypeScript and JavaScript files in the src directory
   "include": ["src"],                            
