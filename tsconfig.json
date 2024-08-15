@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+   
     // Latest ECMAScript features
     "target": "ESNext",
     // Use modern libraries, including DOM and ESNext
@@ -31,7 +32,7 @@
     // Enable incremental compilation
     "incremental": true,
     // Specify which type definitions to include (e.g., Node.js, Jest)
-    "types": ["node", "jest"],                      
+    "types": ["node", "jest","@types/jest", "@testing-library/jest-dom"],
     // Example path alias for easier imports
     "paths": {
       "@components/*": ["src/components/*"],     

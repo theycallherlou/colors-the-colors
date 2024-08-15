@@ -17,7 +17,7 @@ export default function Layout() {
   ));
 
   return (
-    <div className="container" style={{ backgroundColor: `#${a}${b}${c}` }}>
+    <div className="container" role="main" style={{ backgroundColor: `#${a}${b}${c}` }}>
       <section className="list">
         {navLinks}
       </section>

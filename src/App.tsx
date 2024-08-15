@@ -5,7 +5,7 @@ import Color from './components/Color';
 
 export default function App() {
   return (
-    <div className="container">
+    <div className="container" data-testid="app">
       <Routes>
         <Route element={ <Layout />}>
           <Route
