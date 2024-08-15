@@ -17,8 +17,10 @@ export default function Layout() {
   ));
 
   return (
-    <div className="container links" style={{ backgroundColor: `#${a}${b}${c}` }}>
-      {navLinks}
+    <div className="container" style={{ backgroundColor: `#${a}${b}${c}` }}>
+      <section className="list">
+        {navLinks}
+      </section>
       <Outlet />
     </div>
   );
